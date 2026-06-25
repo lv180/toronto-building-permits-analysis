@@ -1,33 +1,74 @@
-# toronto-building-permits-analysis
+# Toronto Building Permits Analysis
 
-## Exploratory Analysis and Model Diagnostics
+## Project Overview
+This project analyzes Toronto building permit data to understand cost behavior, housing unit creation, and statistical distribution patterns in construction-related data.
 
-### Construction Cost Distribution — Original
+The focus is on SQL data extraction, exploratory data analysis, and statistical diagnostics rather than dashboard reporting.
 
-The original construction cost distribution is highly right-skewed, with a small number of very large projects dominating the scale.
+---
 
-![Original Construction Cost Distribution](images/cost_distribution_original.png)
+## Business Problem
+Urban construction data is highly skewed and contains extreme values that distort average cost and housing unit analysis.
 
-### Construction Cost Distribution — Log Transformed
+This project investigates:
+- How construction costs are distributed
+- Whether transformations improve data interpretability
+- Whether regression assumptions hold for predictive modeling
 
-A logarithmic transformation was applied to reduce skewness and improve the visibility of the overall distribution.
+---
 
-![Log-Transformed Construction Cost Distribution](images/cost_distribution_log_transformed.png)
+## Dataset
+Toronto building permits dataset including:
+- Construction costs
+- Dwelling units created
+- Work type information
+- Permit-level records
 
-### Regression Q-Q Plot
+---
 
-The Q-Q plot was used to evaluate whether model residuals followed a normal distribution. The visible deviations indicate that the normality assumption was not fully satisfied.
+## Tools Used
+- SQL (data extraction and filtering)
+- Python (pandas, numpy, matplotlib, seaborn)
+- Jupyter Notebook
+- Statistical transformations (log, sqrt)
 
-![Regression Q-Q Plot](images/qq_plot_cost_model.png)
+---
 
-### Residuals vs Fitted Values
+## Methodology
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Distribution analysis (skewness handling)
+- Log and square-root transformations
+- Regression diagnostics
+- Residual analysis (Q-Q plot, fitted vs residuals)
 
-The residual plot was used to assess variance consistency and model fit. The pattern and presence of extreme residuals suggest heteroscedasticity and influential observations.
+---
 
-![Residuals vs Fitted Values](images/residuals_vs_fitted.png)
+## Key Findings
 
-### Dwelling Units Created — Log1p Transformed
+- Construction costs are highly right-skewed due to extreme high-value projects.
+- Log transformation significantly improves distribution symmetry.
+- Dwelling unit data also shows strong skewness with many zero values.
+- Regression assumptions (normality and homoscedasticity) are partially violated due to outliers.
+- Data transformations improve interpretability but do not fully normalize distributions.
 
-The original dwelling-unit variable was strongly right-skewed. A `log1p` transformation was used because the variable includes zero values.
+---
 
-![Log-Transformed Dwelling Units Distribution](images/dwelling_units_distribution_log_transformed.png)
+## Visualizations
+
+### Cost Distribution (Original)
+![Cost Distribution](images/cost_distribution_original.png)
+
+### Log Transformed Cost Distribution
+![Log Cost](images/cost_distribution_log.png)
+
+### Q-Q Plot
+![QQ Plot](images/qq_plot.png)
+
+### Residuals vs Fitted
+![Residuals](images/residuals_vs_fitted.png)
+
+---
+
+## Conclusion
+This analysis highlights the importance of data transformation when working with highly skewed urban construction datasets. Log transformation and residual diagnostics are essential before applying predictive models.
