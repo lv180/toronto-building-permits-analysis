@@ -146,6 +146,5 @@ toronto-building-permits-analysis/
 ## Author
 
 **Luis Enrique Villalobos Socualaya**
-Master of Data Analytics Student
-University of Niagara Falls, Canada
+Master of Data Analytics
 LinkedIn: https://www.linkedin.com/in/luisvillaloboss/
