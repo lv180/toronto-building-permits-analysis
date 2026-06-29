@@ -1,5 +1,11 @@
 # Toronto Building Permits Analysis
 
+## Business Context
+
+Toronto’s construction sector generates large volumes of building permit data that can be used to understand cost patterns, housing development trends, and approval efficiency across the city.
+
+This project transforms raw permit data into actionable insights using SQL and data analytics techniques.
+
 ## Project Overview
 This project analyzes Toronto building permit data to understand cost behavior, housing unit creation, and statistical distribution patterns in construction-related data.
 
@@ -44,23 +50,29 @@ Toronto building permits dataset including:
 
 ---
 
-## Key Findings
+## Key Insights
 
-- Construction costs are highly right-skewed due to extreme high-value projects.
-- Log transformation significantly improves distribution symmetry.
-- Dwelling unit data also shows strong skewness with many zero values.
-- Regression assumptions (normality and homoscedasticity) are partially violated due to outliers.
-- Data transformations improve interpretability but do not fully normalize distributions.
+- Construction costs are highly skewed, with a small number of large projects driving most of the total cost.
+- Log transformation significantly improves the distribution for analytical modeling.
+- Dwelling unit creation is also heavily skewed, indicating that most permits contribute little to housing supply.
+- Data transformations were necessary to stabilize variance and improve model interpretability.
 
 ---
 
 ## Visualizations
+
+## Data Distribution Analysis
 
 ### Cost Distribution (Original)
 ![Cost Distribution](images/cost_distribution_original.png)
 
 ### Log Transformed Cost Distribution
 ![Log Cost](images/cost_distribution_log.png)
+
+### Dwelling Units log
+(images/dwelling_units_distribution_log_transformed.png)
+
+## Model Diagnostics
 
 ### Q-Q Plot
 ![QQ Plot](images/qq_plot.png)
